@@ -1,0 +1,42 @@
+// # 3201. Find the Maximum Length of Valid Subsequence I
+class Solution {
+    public int maximumLength(int[] nums) {
+        int n=nums.length;
+
+        int evenCount=0, oddCount=0;
+
+        //same check
+        for(int i:nums){
+            if(i%2==0) evenCount++;
+            else oddCount++;
+        }
+
+        //alternate check - start with even
+        int even=1;
+        int prev=nums[0]%2;
+
+        for(int i=1;i<n;i++){
+            int curr=nums[i]%2;
+            if(curr!=prev){
+                even++;
+                prev=curr;
+            }
+        }
+
+        //alternate check - start with odd
+
+        int odd=1;
+        prev=nums[0]%2;
+
+        for(int i=1;i<n;i++){
+            int curr=nums[i]%2;
+            if(curr!=nums[i]%2){
+                odd++;
+                prev=curr;
+            }
+        }
+
+        return Math.max(Math.max(evenCount,oddCount),Math.max(even,odd));
+
+    }
+}
