@@ -17,6 +17,10 @@ class Solution {
                 min_even=Math.min(min_even,i);
             }
         }
+
+        if(min_even==Integer.MAX_VALUE){
+            min_even=0;
+        }
         return max_odd-min_even;
     }
 }
