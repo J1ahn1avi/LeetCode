@@ -1,4 +1,4 @@
-//392. Is Subsequence
+//792. Number of Matching Subsequences
 class Solution {
     public int numMatchingSubseq(String s, String[] words) {
         HashMap<String, Integer> dict = new HashMap<>();
