@@ -8,7 +8,7 @@ class Solution {
         list.sort((a, b) -> Integer.compare(a[0], b[0]));
 
         List<int[]> res = new ArrayList<>();
-        int prev[] = list.get(0);
+        int prev[] = list.get(0); 
         for (int i = 1; i < list.size(); i++) {
             int curr[] = list.get(i);
             if (curr[0] <= prev[1]) {
